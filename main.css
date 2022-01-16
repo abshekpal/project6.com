@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;500;600;700;800;900&display=swap');
+
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin:1.5em;
+}
+img{
+    width:100%;
+}
+a{
+    text-decoration:none;
+    font-size:1.3rem;
+}
+.hero-img{
+    position: absolute;
+    top:0;
+    left:0;
+    background:url("./images/revolt-164_6wVEHfI-unsplash.jpg");
+    width:100%;
+    background-size: cover;
+    background-position-x: 20%;
+    background-position-y: 20%;
+    height:100vh;
+    z-index: -1;
+    animation: introLoad 2s forwards;
+
+    /* overflow: hidden; */
+}
+.logo{
+    color:#fff;
+    font-weight: bold;
+}
+nav{
+    position: fixed;
+    right:0;
+    top:0;
+    height: 100vh;
+    background:#fff;
+    width: 50%;
+    z-index: 9999;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+}
+nav ul{
+    list-style: none;
+    padding:0;
+    margin-top: 8em;
+}
+nav ul a{
+    color:#000;
+    padding:.75em 2em; 
+    display: block;
+    font-size: 1rem;
+    width:100%;
+}
+nav ul a:hover{
+    background:rgb(231, 231, 231);
+}
+.close{
+    float: right;
+    margin:2em;
+    width:2em;
+}
+header{
+    display: flex;
+    justify-content:space-between;
+}
+.menu{
+    width:1.5em;
+    margin-top: -.6em;
+    cursor: pointer;
+    stroke: #fff;
+}
+.menu path{
+    fill:#fff;
+}
+h1{
+    font-size:2rem;
+    margin-top:2em;
+    line-height:2.3rem;
+}
+.subhead{
+    font-size:.9rem;
+    margin-bottom: 10em;
+}
+section.hero{
+    color:#fff;
+    height:90vh;
+}
+.down-arrow{
+    stroke: #fff;
+    position:absolute;
+    bottom: 2em;
+    width:2em;
+    animation: moveArrow 1s alternate-reverse infinite;
+}
+.down-arrow path{
+    fill: #fff;
+}
+.more-info img{
+    width:100%;
+    object-fit: cover;
+    height:11em;
+}
+.more-info .title{
+    font-weight: bold;
+    font-size:1.25rem;
+}
+.desc{
+    line-height:1.5rem;
+    font-size: .9rem;
+}
+.open-nav{
+    transform: translateX(0%);
+}
+
+@media only screen and (min-width: 680px){
+    body{
+        margin:1.5em 5em; 
+    }
+} 
+
+@media only screen and (min-width: 920px){
+    .menu{
+        display: none;
+    }
+    nav{
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width:auto;
+        height:auto;
+        background:none;
+    }
+    svg.close{
+        display: none;
+    }
+    nav ul{
+        display: flex;
+        margin:0;
+    }
+    nav ul a{
+        color:#fff;
+        padding:.5em 1.5em !important;
+        font-size: .8rem;
+        display: flex;
+        justify-content: center;
+        width:auto;
+        /* transition: transform .2s ease-in-out; */
+    }
+    nav ul a:hover{
+        background:none;
+        transform: scale(1.2);
+    }
+    .hero-img{
+        left:unset;
+        right:0;
+        width:50%;
+        height:30em;
+    }
+    .logo{
+        color:#000;
+    }
+    .logo span{
+        color:#ff0000;
+    }
+    section.hero{
+        color:#000;
+        height:auto;
+        width:40%;
+        margin-bottom: 8em;
+    }
+    .down-arrow{
+        stroke: #000;
+        position:unset;
+    }
+    .down-arrow path{
+        fill: #000;
+    }
+    .feature{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-gap:3em;
+        margin-bottom:8em;
+    }
+    .feature img{
+        width:24em;
+    }
+    .feature .content{
+        text-align: right;
+        width:24em;
+    }
+    .feature.left{
+        display: grid;
+        grid-template-areas: 
+        "left right";
+    }
+    .feature.left img{
+        grid-area: left;
+        align-self: center;
+    }
+    .left .content{
+        text-align: left;
+        width:24em;
+        justify-self: left;
+    }
+
+}
+
+@media only screen and (min-width: 1200px){
+    .wrapper{
+        width:1100px;
+        margin:0 auto;
+    }
+    .feature{
+        gap:3em;
+    }
+    section.more-info{
+        margin-top:15em;
+    }
+}
+
+@keyframes introLoad{
+    from{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+@keyframes moveArrow{
+    from{
+        transform: translateY(-20px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
